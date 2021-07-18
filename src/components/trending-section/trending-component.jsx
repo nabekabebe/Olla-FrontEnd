@@ -28,7 +28,7 @@ const TrendingComponent = () => {
         <div className='trending-title'>
           <small className='text-muted'>Best Places</small>
           <HeaderTitle className='display-6' widthWrap={30}>
-            Trending Places at Budget
+            Trending Places Based on Review
           </HeaderTitle>
         </div>
       </div>

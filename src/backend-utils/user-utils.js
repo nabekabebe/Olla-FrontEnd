@@ -51,10 +51,7 @@ export const deleteUserPosts = async (houseId) => {
 
 export const publishUserPosts = async (data) => {
   try {
-    const response = await axios.post(`houses`, {
-      currentPassword: "",
-      newPassword: "",
-    });
+    const response = await axios.post(`houses`, data);
     const house = response.data.message.data;
     console.log("house", house);
     return {

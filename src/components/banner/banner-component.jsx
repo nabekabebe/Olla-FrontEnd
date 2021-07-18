@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./banner-styles.scss";
 import livingRoom from "../../assets/living-room.jpg";
 
@@ -22,7 +23,9 @@ export default function BannerComponent() {
             Finding residence has never been easier
           </h4>
           <div className='mt-5'>
-            <CustomButtonOutlined>Explore Now</CustomButtonOutlined>
+            <Link className='nav-link' to='/houses/category'>
+              <CustomButtonOutlined>Explore Now</CustomButtonOutlined>
+            </Link>
           </div>
         </div>
         <div className='banner-bg'>

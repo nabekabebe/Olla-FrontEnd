@@ -106,7 +106,7 @@ export default function ShowPage() {
                 title={
                   <Stat
                     value='Contact Information'
-                    title={following.includes(user.id) ? "SUBSCRIBED" : ""}
+                    title={following.includes(user.id) ? "S " : ""}
                   />
                 }
               />
