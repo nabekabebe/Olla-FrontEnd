@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-
+import dotenv from 'dotenv';
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
@@ -12,7 +12,8 @@ import axios from "axios";
 /**
  * Configure axios
  */
-axios.defaults.baseURL = "http://localhost:8899/api/v1/";
+dotenv.config({path: '.env'});
+axios.defaults.baseURL = process.env.BASE_URL;
 
 ReactDOM.render(
   <React.StrictMode>
