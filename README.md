@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### Running The Project
+
+Inside the .env file add `MAPBOX_TOKEN`, `SOCKET_URL`, `BASE_URL`. Socket and Base url are for the backend server.
+The project also uses the MapBox api to display maps.
+
 ## Available Scripts
 
 In the project directory, you can run:
