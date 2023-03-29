@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import dotenv from 'dotenv';
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
@@ -12,8 +11,12 @@ import axios from "axios";
 /**
  * Configure axios
  */
-dotenv.config({path: '.env'});
-axios.defaults.baseURL = process.env.BASE_URL;
+const BASE_URL = process.env.REACT_APP_BASE_URL
+
+if(!BASE_URL){
+  console.error("ERROR=>>>    BASE URL NOT PROVIDED: ",BASE_URL)
+}
+axios.defaults.baseURL = BASE_URL;
 
 ReactDOM.render(
   <React.StrictMode>

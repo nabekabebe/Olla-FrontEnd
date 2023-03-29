@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import "./App.css";
-import dotenv from 'dotenv';
 import React, { useState, useEffect } from "react";
 import { Route, Switch, Redirect, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -17,8 +16,6 @@ import ShowPage from "./pages/show/show-page";
 import { Notification, Button } from "./antd-imports";
 import { io } from "socket.io-client";
 
-dotenv.config({path: '.env'});
-
 
 const NotFound = () => <div>Not found</div>;
 
@@ -34,11 +31,13 @@ const App = () => {
     config.headers.Authorization = `Bearer ${token}`;
     return config;
   });
-  mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
-
+  mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN
+  if(!mapboxgl.accessToken){
+    console.error("ERROR=>>>    MAP_BOX API NOT PROVIDED: ",mapboxgl.accessToken)
+  }
   const [socket, setSocket] = useState();
   useEffect(() => {
-    const s = io(process.env.SOCKET_URL);
+    const s = io(process.env.REACT_APP_SOCKET_URL);
     setSocket(s);
     return () => {
       s.disconnect();
